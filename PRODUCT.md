@@ -24,8 +24,7 @@ Sito multi-pagina statico pubblicato su GitHub Pages (https://fladynance.github.
 
 ## Capabilities and Constraints
 
-- Vincolo esplicito dell'utente: va preservata la struttura attuale delle pagine (index, la-villa/casa-vacanza, matrimoni, rito-civile, eventi, galleria, contatti, camere/appartamenti standard-deluxe-superior, virtual-tour, esplora come hub) — il redesign non deve accorpare o rimuovere pagine.
-- Vincolo esplicito dell'utente: contenuti, foto e dati di contatto reali attuali vanno preservati; il redesign riguarda l'estetica (palette, tipografia, layout, componenti), non i contenuti o i fatti sul servizio.
+- Vincolo aggiornato dall'utente (sostituisce il vincolo iniziale sulla struttura): "cambia tutto, stravolgi, ottimizza dal punto di vista grafico, fai ciò che ritieni meglio... mantieni solo i copy". Layout, struttura delle pagine, componenti e sistema visivo sono completamente liberi; l'unico vincolo è preservare il copy reale (testi, fatti sul servizio, dati di contatto) — non inventare contenuti nuovi, ma la loro presentazione visiva/strutturale è a discrezione del redesign.
 - Nessun backend: il form contatti resta client-side allo stato attuale, salvo richiesta futura di integrazione.
 
 ## Brand Commitments
