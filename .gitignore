@@ -2,3 +2,7 @@
 Thumbs.db
 node_modules/
 *.log
+
+# Impeccable — downloaded binary and ephemeral cache, not source
+.claude/skills/impeccable/scripts/bin/
+.impeccable/hook.cache.json
