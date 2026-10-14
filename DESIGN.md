@@ -36,6 +36,15 @@ Regola: i pulsanti pieni in oro usano testo **scuro** (`var(--dark)`), mai bianc
 - **Hub tiles**: tolta la cornice a filo e il pallino ceralacca (troppo decorativi/affollati). Ora: titolo grande e sicuro, una sottile riga oro sotto l'etichetta che si espande da 2.5rem a tutta larghezza sull'hover — un solo gesto, non tre.
 - **Footer**: resta scuro (era già così, nessuna modifica necessaria) — il contrasto chiaro-sopra/scuro-sotto è la struttura portante del sito.
 
+## matrimoni.html ed eventi.html
+
+L'utente ha chiesto 5 idee innovative per queste due pagine. Prima di costruire qualcosa da zero, lettura del codice esistente ha rivelato che **entrambe le pagine hanno già interazioni firma sofisticate e originali**, superiori alle 5 idee proposte in chat:
+
+- `matrimoni.html`: due fedi nuziali in oro che si uniscono progressivamente mentre si scorre la pagina (animazione SVG su misura, desktop e mobile), rami d'ulivo decorativi con parallasse.
+- `eventi.html`: un cielo che cambia colore scorrendo la pagina — dal colore del sito al tramonto alla notte — con sole e luna renderizzati proceduralmente via filtri SVG (crateri, luce, rumore).
+
+Decisione: **non sostituire**, solo rifinire. Ho corretto 3 bottoni con testo bianco su oro (contrasto insufficiente: `.mt-seal`, `.rc-cta`, `.ct-page .btn-solid-dark`) ora testo scuro su oro. Le animazioni esistenti sono rimaste intatte: demolirle per le 5 idee più semplici proposte sarebbe stato un downgrade.
+
 ## Known pre-existing / not yet touched
 
 - Kicker "Il racconto del giorno" nelle sotto-pagine dinamiche della galleria (generato da JS), stesso pattern mai rimosso in nessuna delle tre iterazioni.
