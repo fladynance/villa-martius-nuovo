@@ -11,12 +11,12 @@
 <meta property="og:description" content="La galleria di Villa Martius: matrimoni, eventi, riti civili e casa vacanza, da sfogliare come quattro cartoline.">
 <meta property="og:image" content="assets/img/galleria/gazebo-full.jpg">
 <meta property="og:type" content="website">
-<meta name="theme-color" content="#ECE4D4">
+<meta name="theme-color" content="#F4EFE3">
 <link rel="icon" type="image/png" href="assets/img/logo.png">
 <title>Galleria Villa Martius · Cartoline</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Josefin+Sans:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Josefin+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 /* Layout: due livelli. Livello 1 = le 4 cartoline a tutto schermo, senza scorrimento.
    Livello 2 = pagina della singola galleria: fascia con la foto di copertina, poi l'impaginazione propria
@@ -24,20 +24,21 @@
    · Casa vacanza = schede per alloggio), in fondo le altre gallerie.
    Tema unico chiaro come il sito (color-scheme: light). Palette dal file style.css del sito. */
 :root {
-  --bg:       #ECE4D4;   /* travertino */
-  --bg-warm:  #DCD0B4;
-  --wall:     #DDD0B5;   /* parete della sala del rito */
-  --paper:    #F2EADA;
-  --mat:      #F8F2E6;   /* passe-partout */
-  --dark:     #1B1713;
-  --ink:      #241C15;
-  --muted:    #5E4E3B;
-  --gold:     #9C4E2B;
-  --gold-lt:  #D98B5F;
-  --rust:     #4A2012;   /* etichette pagina Matrimoni del sito */
-  --terra:    #9C4E2B;   /* terracotta del sito */
-  --rule:     rgba(90,70,45,0.28);
-  --serif: 'Cormorant Garamond', 'Times New Roman', Georgia, serif;
+  --bg:       #F4EFE3;   /* pergamena avorio */
+  --bg-warm:  #E8DFC8;
+  --wall:     #E3D8BC;   /* parete della sala del rito */
+  --paper:    #F8F3E6;
+  --mat:      #FBF7EC;   /* passe-partout */
+  --dark:     #16231C;
+  --ink:      #1C2820;
+  --muted:    #5C6459;
+  --gold:     #B8924A;   /* oro a foglia — solo filo decorativo/label */
+  --gold-lt:  #D9BD83;
+  --wax:      #C9983D;   /* ceralacca — unico accento interattivo */
+  --wax-lt:   #E7C780;
+  --rust:     #A87A32;   /* etichette pagina Matrimoni del sito */
+  --rule:     rgba(28,40,32,0.22);
+  --serif: 'Bodoni Moda', 'Didot', 'Times New Roman', Georgia, serif;
   --sans:  'Josefin Sans', system-ui, -apple-system, sans-serif;
   color-scheme: light;
 }
@@ -49,8 +50,8 @@ html.is-landing, html.is-landing body { height: 100%; overflow: hidden; overscro
 img { display: block; max-width: 100%; }
 button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; text-align: inherit; }
 a { color: inherit; }
-:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
-::selection { background: var(--gold); color: #fff; }
+:focus-visible { outline: 2px solid var(--wax); outline-offset: 3px; }
+::selection { background: var(--wax); color: #fff; }
 .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
 .label { font-family: var(--sans); font-weight: 300; font-size: .72rem; letter-spacing: .28em; text-transform: uppercase; color: var(--gold); }
@@ -72,37 +73,37 @@ a { color: inherit; }
 @media (min-width: 721px) { .nav-cta-icon { display: none; } }
 
 /* ─── BARRA CHIARA (come la nav di esplora.html) ─── */
-.nav-landing { background: rgba(213,196,164,.96); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); box-shadow: 0 1px 0 rgba(90,68,44,.18); }
-.nav-landing .nav-back { color: var(--ink); }
-.nav-landing .nav-back:hover { color: var(--gold); }
-.nav-landing .nav-back svg { stroke: var(--ink); }
-.nav-landing .nav-back:hover svg { stroke: var(--gold); }
-.nav-landing .nav-logo img { filter: none; }
-.nav-landing .nav-cta { color: var(--ink); border-color: var(--ink); }
-.nav-landing .nav-cta:hover { background: var(--ink); color: var(--bg); }
-.nav-landing .g-hamburger { color: var(--ink); }
-.nav-landing .g-hamburger:hover { color: var(--gold); }
-.nav-vt { display: inline-flex; align-items: center; gap: .6rem; font-family: var(--sans); font-weight: 300; font-size: .64rem; letter-spacing: .22em; text-transform: uppercase; text-decoration: none; padding: .7rem 1.1rem; border-radius: 999px; min-height: 44px; color: #fff; background: var(--gold); border: 1px solid var(--gold); transition: background .35s, color .35s, border-color .35s; }
+.nav-landing { background: rgba(22,35,28,.94); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); box-shadow: 0 1px 0 rgba(184,146,74,.18); }
+.nav-landing .nav-back { color: #F4EFE3; }
+.nav-landing .nav-back:hover { color: var(--wax-lt); }
+.nav-landing .nav-back svg { stroke: #F4EFE3; }
+.nav-landing .nav-back:hover svg { stroke: var(--wax-lt); }
+.nav-landing .nav-logo img { filter: brightness(0) invert(1); }
+.nav-landing .nav-cta { color: #F4EFE3; border-color: rgba(244,239,227,.55); }
+.nav-landing .nav-cta:hover { background: #F4EFE3; color: var(--dark); }
+.nav-landing .g-hamburger { color: #F4EFE3; }
+.nav-landing .g-hamburger:hover { color: var(--wax); }
+.nav-vt { display: inline-flex; align-items: center; gap: .6rem; font-family: var(--sans); font-weight: 300; font-size: .64rem; letter-spacing: .22em; text-transform: uppercase; text-decoration: none; padding: .7rem 1.1rem; border-radius: 999px; min-height: 44px; color: #fff; background: var(--wax); border: 1px solid var(--wax); transition: background .35s, color .35s, border-color .35s; }
 .nav-vt:hover { background: var(--ink); border-color: var(--ink); }
 .nav-vt-icon { width: 36px; height: 20px; stroke: currentColor; fill: none; stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; }
 @media (max-width: 720px) { .nav-vt span { display: none; } .nav-vt { padding: .7rem; } }
 
 /* ─── HAMBURGER + MENU (come nel resto del sito) ─── */
 .g-hamburger { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; background: transparent; border: 0; cursor: pointer; color: #fff; transition: color .3s; }
-.g-hamburger:hover { color: var(--gold-lt); }
+.g-hamburger:hover { color: var(--wax-lt); }
 .g-hamb-icon { position: relative; width: 26px; height: 16px; display: flex; flex-direction: column; justify-content: space-between; }
 .g-hamb-icon span { display: block; height: 1.5px; width: 100%; background: currentColor; transition: width .4s ease; }
 .g-hamb-icon span:nth-child(2) { width: 65%; align-self: flex-end; }
 .g-hamburger:hover .g-hamb-icon span:nth-child(2) { width: 100%; }
-.g-menu { position: fixed; inset: 0; z-index: 300; background: linear-gradient(160deg, #1B1713 0%, #2A1F16 60%, #1B1713 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1.8rem; padding: 5rem 2rem 3rem; transform: translateY(-100%); transition: transform .6s cubic-bezier(.76,0,.24,1); overflow-y: auto; }
+.g-menu { position: fixed; inset: 0; z-index: 300; background: linear-gradient(160deg, #16231C 0%, #2A1F16 60%, #16231C 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1.8rem; padding: 5rem 2rem 3rem; transform: translateY(-100%); transition: transform .6s cubic-bezier(.76,0,.24,1); overflow-y: auto; }
 .g-menu.open { transform: translateY(0); }
-.g-menu::before { content: "Menu"; font-family: var(--sans); font-weight: 400; font-size: .68rem; letter-spacing: .42em; text-transform: uppercase; color: var(--gold-lt); margin-bottom: 1.2rem; }
+.g-menu::before { content: "Menu"; font-family: var(--sans); font-weight: 400; font-size: .68rem; letter-spacing: .42em; text-transform: uppercase; color: var(--wax-lt); margin-bottom: 1.2rem; }
 .g-menu-close { position: absolute; top: 1.6rem; right: 1.6rem; display: inline-flex; align-items: center; gap: .6rem; font-family: var(--sans); font-weight: 400; font-size: .72rem; letter-spacing: .28em; text-transform: uppercase; color: rgba(255,255,255,.8); background: none; border: 0; padding: .6rem .9rem; cursor: pointer; transition: color .3s; }
-.g-menu-close:hover { color: var(--gold-lt); }
+.g-menu-close:hover { color: var(--wax-lt); }
 .g-menu a { font-family: var(--serif); font-weight: 400; font-style: italic; font-size: 2.2rem; color: #fff; text-decoration: none; transition: color .3s; line-height: 1.2; display: inline-flex; align-items: center; gap: .9rem; }
-.g-menu a.active, .g-menu a:hover { color: var(--gold-lt); }
-.g-menu-cta { margin-top: 2rem; font-family: var(--sans); font-weight: 400; font-style: normal; font-size: .72rem; letter-spacing: .32em; text-transform: uppercase; color: var(--gold-lt); background: transparent; border: 1px solid var(--gold-lt); border-radius: 999px; padding: 1.1rem 2.6rem; text-decoration: none; transition: background .35s, color .35s; }
-.g-menu-cta:hover { background: var(--gold-lt); color: var(--dark); }
+.g-menu a.active, .g-menu a:hover { color: var(--wax-lt); }
+.g-menu-cta { margin-top: 2rem; font-family: var(--sans); font-weight: 400; font-style: normal; font-size: .72rem; letter-spacing: .32em; text-transform: uppercase; color: var(--wax-lt); background: transparent; border: 1px solid var(--wax-lt); border-radius: 999px; padding: 1.1rem 2.6rem; text-decoration: none; transition: background .35s, color .35s; }
+.g-menu-cta:hover { background: var(--wax-lt); color: var(--dark); }
 
 /* ═════════ LIVELLO 1 · I QUATTRO RIQUADRI (6 modelli) ═════════ */
 .landing { height: 100%; display: grid; grid-template-rows: auto minmax(0, 1fr); background: var(--bg); }
@@ -207,7 +208,7 @@ a { color: inherit; }
 .casa .btn { color: var(--dark); }
 .casa .btn:hover { background: var(--dark); color: var(--paper); border-color: var(--dark); }
 .casa .btn.solid { background: var(--dark); border-color: var(--dark); border-radius: 999px; color: #fff; }
-.casa .btn.solid:hover { background: var(--rust); border-color: var(--rust); }
+.casa .btn.solid:hover { background: var(--wax); border-color: var(--wax); }
 
 /* ─── LE ALTRE GALLERIE ─── */
 .others { background: var(--bg); padding-block: clamp(2.6rem, 6vw, 4rem); border-top: 1px solid var(--rule); }
@@ -226,7 +227,7 @@ a { color: inherit; }
 .lb { position: fixed; inset: 0; z-index: 200; background: #120D09; color: #fff; display: grid; grid-template-rows: auto minmax(0, 1fr) auto auto; padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
 .lb-top { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: .8rem clamp(12px, 2vw, 24px); }
 .lb-where { font-family: var(--sans); font-size: .64rem; letter-spacing: .22em; text-transform: uppercase; color: rgba(255,255,255,.7); font-variant-numeric: tabular-nums; }
-.lb-where b { color: var(--gold-lt); font-weight: 400; }
+.lb-where b { color: var(--wax-lt); font-weight: 400; }
 .lb-close { min-height: 44px; padding: .5rem 1rem; border: 1px solid rgba(255,255,255,.35); border-radius: 999px; font-family: var(--sans); font-size: .72rem; letter-spacing: .22em; text-transform: uppercase; }
 .lb-stage { position: relative; display: grid; place-items: center; overflow: hidden; touch-action: pan-y; padding: 0 clamp(0px, 5vw, 80px); }
 .lb-stage img { max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 6px; transition: transform .3s ease, opacity .3s ease; user-select: none; -webkit-user-drag: none; }
@@ -236,7 +237,7 @@ a { color: inherit; }
 .lb-cap { padding: .9rem clamp(12px, 2vw, 24px) .5rem; text-align: center; }
 .lb-cap-row { display: flex; align-items: center; justify-content: center; gap: 1rem; }
 .lb-cap-text { min-width: 0; }
-.lb-cap small { font-family: var(--sans); font-size: .6rem; letter-spacing: .22em; text-transform: uppercase; color: var(--gold-lt); }
+.lb-cap small { font-family: var(--sans); font-size: .6rem; letter-spacing: .22em; text-transform: uppercase; color: var(--wax-lt); }
 .lb-cap h3 { margin: .15rem 0 0; font-weight: 300; font-size: 1.6rem; line-height: 1.2; font-style: italic; }
 .lb-arrow2 { display: none; width: 42px; height: 42px; flex: 0 0 auto; align-items: center; justify-content: center; border: 1px solid rgba(255,255,255,.3); border-radius: 50%; background: rgba(255,255,255,.06); }
 .lb-book { display: flex; align-items: center; justify-content: center; gap: 18px; flex-wrap: wrap; margin-top: .6rem; }
@@ -249,7 +250,7 @@ a { color: inherit; }
 .lb-rail { display: flex; gap: 6px; overflow-x: auto; padding: .6rem clamp(12px, 2vw, 24px) 1rem; scrollbar-width: none; justify-content: safe center; }
 .lb-rail::-webkit-scrollbar { display: none; }
 .lb-rail button { flex: 0 0 auto; width: 64px; height: 48px; overflow: hidden; border-radius: 4px; opacity: .4; transition: opacity .25s; }
-.lb-rail button[aria-current="true"] { opacity: 1; box-shadow: inset 0 0 0 2px var(--gold-lt); }
+.lb-rail button[aria-current="true"] { opacity: 1; box-shadow: inset 0 0 0 2px var(--wax-lt); }
 .lb-rail img { width: 100%; height: 100%; object-fit: cover; }
 
 footer.foot { background: var(--dark); color: rgba(255,255,255,.6); padding: 2rem 16px 2.4rem; text-align: center; font-family: var(--sans); font-size: .7rem; letter-spacing: .2em; text-transform: uppercase; }
@@ -641,7 +642,7 @@ const IMG = {"gazebo-BR": "assets/img/galleria/gazebo-BR.jpg", "gazebo-L": "asse
   /* ═══ CASA VACANZA · il tavolo intelligente a filtri ═══ */
   (function () {
     const chipsEl = $('#casaChips'), info = $('#casaInfo'), grid = $('#casaGrid');
-    const COLORS = ['#9C4E2B', '#4A2012', '#7A5A2E', '#5E4E3B', '#8C6A3E', '#2F6F5E'];
+    const COLORS = ['#C9983D', '#4A2012', '#7A5A2E', '#5E4E3B', '#8C6A3E', '#2F6F5E'];
     const all = [];
     UNITS.forEach((u, ui) => u.ph.forEach(([k, t]) => all.push({ u, ui, k, t })));
     chipsEl.innerHTML = UNITS.map((u, i) => '<button class="casa-chip" type="button" data-i="' + i + '" aria-pressed="false">' + esc(u.name) + '</button>').join('');

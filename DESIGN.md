@@ -4,40 +4,43 @@
 
 ## World
 
-Travertino evoluto — evoluzione disciplinata della direzione esistente (ispirata a Borgo Egnazia), non una rottura totale. Riferimenti di qualità vincolanti: Borgo Egnazia e Aman Resorts (minimalismo caldo, fotografia di grande formato, pochissimo testo per schermata). Decisione presa con l'utente dopo un giro di direzioni alternative più radicali (vedi `.impeccable/surfaces/esplora-html.md`), poi raffinata una seconda volta su richiesta esplicita di un cambio cromatico più visibile.
+Luxury contemporaneo — avorio luminoso, inchiostro carbone, un solo oro champagne come firma. Terza iterazione in questa sessione: la prima ("L'Atto", inchiostro verde-bosco + ceralacca rossa) è stata respinta dall'utente come "orribile" e "non luxury". Qui si corregge rotta verso un linguaggio da resort di lusso contemporaneo (Aman, Belmond, Rosewood): meno decorazione, più spazio e fiducia nella fotografia e nella tipografia grande.
 
 ## Palette
 
-Strategia: Restrained (neutri caldi) + un solo accento Committed (terracotta), non più oro/senape.
+Strategia: Committed — un solo colore oltre al bianco/nero fa tutto il lavoro (CTA, hover, filo decorativo, label). Niente rosso, niente verde scuro, niente secondo accento a competere.
 
 ```
---bg:         #ECE4D4   travertino chiaro, ground principale
---bg-warm:    #DCD0B4   variante più calda per fasce/section alternate
---dark:       #1B1713   ink quasi nero, testo su chiaro e sfondo scuro (nav/footer scuri, menu mobile)
---body-txt:   #241C15
---muted:      #6B5F4E
---gold / --terracotta: #9C4E2B   UNICO accento funzionale — CTA, hover, bottone Virtual Tour, label su sfondo chiaro
---gold-lt:    #D98B5F   variante chiara dello stesso accento — SOLO per testo/label su sfondi scuri (nav-vt on-dark, footer h4, "Menu" del menu mobile), mai su sfondo chiaro
+--bg:       #FAF6EC   avorio luminoso
+--bg-warm:  #F1E8D2
+--dark:     #1A1816   inchiostro carbone (neutro, non più verdastro)
+--body-txt: #221E18
+--muted:    #6B6358
+
+--gold:     #C9983D   oro champagne — l'unica firma: CTA, hover, filo, label
+--gold-lt:  #E7C780   variante chiara su fondo scuro
 ```
 
-Regola pratica, da rispettare nelle prossime pagine: `--gold` (scuro, satura) su fondo chiaro; `--gold-lt` (chiaro) su fondo scuro. Non più oro-senape (#A88A4E) né i temi colore per-pagina `theme-plum`/`theme-emerald` definiti in style.css (risultano non utilizzati in nessuna pagina: palette unica su tutto il sito).
+`--wax`/`--wax-lt` restano come alias dello stesso oro (retrocompatibilità con il CSS esistente): non esiste più un secondo colore interattivo.
+
+Regola: i pulsanti pieni in oro usano testo **scuro** (`var(--dark)`), mai bianco — l'oro è troppo chiaro per il bianco sopra, e il contrasto scuro-su-oro è la combinazione classica dell'hotellerie di lusso.
 
 ## Type
 
-- Display/titoli: Cormorant Garamond (invariato — non è nella lista di default vietata, confermato dal brief del sito).
-- UI/label: Josefin Sans (invariato).
-- Niente kicker/eyebrow numerati ("01 —", "02 —" ecc.) sopra i titoli delle card: rimossi da esplora.html. **Nota per le prossime pagine:** la home (`index.html`) ha ancora un eyebrow "MATRIMONI ED EVENTI · MESSINA, SICILIA" sopra il titolo hero — stesso pattern, non ancora rimosso, da trattare nel prossimo giro.
+- Display: **Bodoni Moda**, peso 500 (non più corsivo di default — il corsivo ovunque leggeva come invito/cerimonia, non come resort). Dimensioni aumentate rispetto alle iterazioni precedenti per maggiore sicurezza.
+- UI/label: Josefin Sans, invariato.
 
-## Hub tile component (esplora.html)
+## Componenti chiave
 
-Contenuto allineato in basso a sinistra (non più centrato), overlay fotografico sfumato solo nel terzo inferiore (prima: scrim uniforme su tutta la tile), titolo più piccolo e con peso normale (prima: uppercase enorme), sottotitolo in sans minuscolo. Hover: zoom leggero della foto + una linea di 2.5rem che si estende da sinistra (prima: linea centrata).
+- **Nav globale**: tornata chiara/vetro (avorio traslucido con blur), non più scura — una barra scura su tutte le pagine leggeva pesante. Logo e icone in inchiostro scuro, CTA Virtual Tour piena in oro con testo scuro.
+- **Hub tiles**: tolta la cornice a filo e il pallino ceralacca (troppo decorativi/affollati). Ora: titolo grande e sicuro, una sottile riga oro sotto l'etichetta che si espande da 2.5rem a tutta larghezza sull'hover — un solo gesto, non tre.
+- **Footer**: resta scuro (era già così, nessuna modifica necessaria) — il contrasto chiaro-sopra/scuro-sotto è la struttura portante del sito.
 
-## Known pre-existing issues (not introduced by this pass)
+## Known pre-existing / not yet touched
 
-- Testo del footer sotto gli 11px e un'etichetta con colore invisibile sull'hover del menu mobile: **corretti** su tutte le pagine (fix nel CSS condiviso).
-- Alcuni effetti "glow" decorativi (ombre sfocate colorate, aloni radiali) restano in sezioni non ancora toccate (es. `eventi.html`, `galleria.html` righe ~2150-2260 di style.css) — pattern che lo stesso Impeccable segnala come "AI slop" da evitare in futuro.
-- L'eyebrow/kicker sopra il titolo in `index.html` va rimosso nel prossimo giro per coerenza con la regola applicata a esplora.html.
+- Kicker "Il racconto del giorno" nelle sotto-pagine dinamiche della galleria (generato da JS), stesso pattern mai rimosso in nessuna delle tre iterazioni.
+- Non tutte le 18 pagine sono state ispezionate singolarmente a schermo; la maggior parte eredita il sistema dai token CSS condivisi.
 
 ## Build path
 
-Code-led: nessuna immagine sintetica generata, si lavora sulla fotografia reale già presente nel sito.
+Code-led: nessuna immagine sintetica generata, lavoro diretto su palette/tipografia/componenti con la fotografia reale del sito.
